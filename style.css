@@ -1,0 +1,940 @@
+body{
+    background-color: #242333;
+    overflow-x: hidden;
+    background-image: url();
+}
+
+.left{
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 85px;
+}
+
+/*Eliminates padding, centers the thumbnail */
+
+body, html {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    overflow-x: hidden;
+
+    }
+    
+    /* Styles the thumbnail */
+    
+    a.lightbox img {
+    height: 50px;
+    width: 50px;
+    border: 3px solid white;
+    box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+    margin: 20px ;
+    border-radius: 50%;
+    }
+    
+    /* Styles the lightbox, removes it from sight and adds the fade-in transition */
+    
+    .lightbox-target {
+    position: fixed;
+    top: -100%;
+    width: 100%;
+    background: rgba(0,0,0,.7);
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+    overflow: hidden;
+     
+    }
+    
+    /* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+    
+    .lightbox-target img {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom: 0;
+    height: 50%;
+    width: 25%;
+    border: 3px solid white;
+    box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+    box-sizing: border-box;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+      border-radius: 50%;
+    }
+    
+    /* Styles the close link, adds the slide down transition */
+    
+    a.lightbox-close {
+    display: block;
+    width:50px;
+    height:50px;
+    box-sizing: border-box;
+    background: white;
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    top: -80px;
+    right: 0;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    }
+    
+    /* Provides part of the "X" to eliminate an image from the close link */
+    
+    a.lightbox-close:before {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: black;
+    position: absolute;
+    left: 26px;
+    top:10px;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+    }
+    
+    /* Provides part of the "X" to eliminate an image from the close link */
+    
+    a.lightbox-close:after {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: black;
+    position: absolute;
+    left: 26px;
+    top:10px;
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    }
+    
+    /* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+    
+    .lightbox-target:target {
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+      overflow:auto;
+    }
+    
+    .lightbox-target:target img {
+    max-height: 100%;
+    max-width: 100%;
+    }
+    
+    .lightbox-target:target a.lightbox-close {
+    top: 0;
+    }
+    
+ 
+
+.right{
+    color:skyblue;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    height: 80px;
+    background-color: #1414165e;
+    position: relative;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 0 23px;
+
+}
+
+li a{
+    text-decoration: none;
+    color: skyblue;
+}
+
+.openBtn {
+    display: none;
+  }
+  
+  .mobilenav {
+    display: none;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  
+  
+  .openBtn {
+    background: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .openBtn:hover {
+    background: #bbb;
+  }
+
+header{
+    width: 100%;
+}
+
+.rightsection img{
+    float:right;
+    width: 25%;
+    height: 25%;
+    margin-top: 20px;
+}
+
+.intro{
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color:skyblue;
+    margin-top: 40px;
+    margin-left: 10px;
+}
+
+.name{
+    position: relative;
+    top: -20px;
+}
+
+#firstsection{
+    display: flex;
+    justify-content: space-between;
+    margin: 100px 0px 370px;
+}
+
+#firstsection div{
+  width: 30%;
+}
+
+.leftsection{
+   color: white;
+   font-size: 3rem;
+   margin-top: 75px;
+   margin-left:  20px; ;
+}
+
+span.skyblue{
+    color: skyblue;
+    font-family: 'Handjet', 'cursive';
+}
+
+.web{
+    display: inline;
+}
+
+.webdev{
+    display: inline;
+}
+
+.rightsection img{
+    height: 90%;
+    width: 100%;
+    margin-right: 20px;
+}
+
+#about{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 200px 10px 100px;
+}
+
+
+section#about{
+    height: 800px;
+}
+
+.tenth{
+    display: flex;
+    flex-direction: row;
+    height: 25%;
+}
+
+.tenthperson{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+div.tenthimg{
+    height: 75%;
+}
+
+div.tenthtxt{
+    height: 25%;
+}
+
+.tenth img{
+    width: 100%;
+    height: 100%;
+}
+
+.tenthmarks{
+    color: white;
+    width: 50%;
+    display: inline-flex;
+    align-items: center;
+}
+
+.inter{
+    display: flex;
+    flex-direction: row;
+    height: 25%;
+
+}
+
+.interperson{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+
+}
+
+div.interimg{
+    height: 75%;
+}
+
+div.intertxt{
+    height: 25%;
+}
+
+.inter img{
+    width: 100%;
+    height: 100%;
+}
+
+.intermarks{
+    color: white;
+    width: 50%;
+    display: inline-flex;
+    align-items: center;
+}
+
+.engg{
+    display: flex;
+    flex-direction: row;
+    height: 25%;
+
+}
+
+.enggperson{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+
+}
+
+div.enggtxt{
+    height: 25%;
+}
+
+div.enggimg{
+    height: 65%;
+}
+
+.engg img{
+    width: 60%;
+    height: 100%;
+}
+
+.enggmarks{
+    color: white;
+    width: 50%;
+    display: inline-flex;
+    align-items: center;
+}
+
+.frsttxt, .tenthtxt, .intertxt, .enggtxt{
+    color: white;
+}
+
+
+
+/*.about img{
+    display: none;
+}*/
+
+#skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section#skills{
+    height: 300px;
+    margin: 400px 10px 500px;
+}
+
+.one{
+    display: flex;
+    justify-content: space-around;
+}
+
+.two{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.cpp img, .dsa img, .html5 img, .css3 img, .react img, .node img, .sql img,  .intern img{
+    height: 100px;
+    width: 100px;
+}
+
+.cpp, .dsa, .html5, .css3, .react, .node, .sql, .intern{
+    color: white;
+}
+
+.onemob, .twomob, .threemob, .fourmob{
+    display: none;
+}
+
+
+
+
+#experience{
+    margin: 300px 10px 475px;
+}
+
+#experience h1{
+    margin-bottom: 50px;
+}
+
+div.webimage{
+    width: 50%;
+}
+
+i.fa-regular.fa-code{
+    height: 100px;
+}
+
+.webimage img:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ffee10;
+  }
+  
+.webimage img:hover {
+    color: #ffee10;
+    box-shadow: 0 0 5px #ffee10;
+    text-shadow: 0 0 5px #ffee10;
+  }
+
+.webtext{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.webtext img{
+    width: 8%;
+    margin-left: 400px;
+}
+
+#manac{
+    position: relative;
+    top: -100px;
+    margin-left: 200px;
+}
+
+#alorb{
+    position: relative;
+    top: -80px;
+    margin-left: 140px;
+}
+
+
+#por{
+    margin: 300px 10px 375px;
+    display: flex;
+    flex-direction: column;
+}
+
+.iac4{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div.iac4{
+    height: 100px;
+}
+
+.iac5{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div.iac5{
+    height: 100px;
+}
+
+.anti{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div.anti{
+    height: 100px;
+}
+
+footer{
+    background-color: #1414165e;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+#me{
+    width: 75%;
+}
+
+.contact{
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: space-evenly;
+}
+
+.mobile{
+    width: 30%;
+}
+
+.mobile svg{
+    position: relative;
+    top: 10px;
+    left: -10px;
+}
+
+.mail{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+
+.social{
+    display: flex;
+    justify-content: space-around;
+}
+
+section#form{
+    width: 75%;
+}
+
+form{
+    text-align: center;
+}
+
+fieldset{
+    border: 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+}
+
+#name{
+    width: 100%;
+    height: 20px;
+    resize: none;
+}
+
+#email{
+    width: 100%;
+    height: 20px;
+    resize: none;
+}
+
+#number{
+    width: 100%;
+    height: 20px;
+    resize: none;
+}
+
+#query{
+    width: 100%;
+    height: 50px;
+    resize: none;
+    grid-area: 2 / 1 /span 2 / span 3;
+}
+
+#submit{
+    width: 30%;
+    height: 75%;
+    position:relative;
+    left: 120px;
+}
+
+#myBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background-color: skyblue;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+
+
+  @media only screen and (max-width:1456px) {
+    html{
+        font-size: 0.8rem;
+    }
+
+    .webtext img{
+        margin-left: 330px;
+    }
+
+    #manac{
+        position: relative;
+        top: -79px;
+        margin-left: 200px;
+    }
+
+    #alorb{
+        position: relative;
+        top: -73px;
+        margin-left: 150px;
+    }
+  }
+
+  @media only screen and (max-width:1201px){
+
+    .leftsection{
+        font-size: 2.5rem;
+    }
+
+    .webtext img{
+        margin-left: 250px;
+    }
+
+    #submit{
+        position: relative;
+        left: 80px;
+    }
+  }
+
+  @media only screen and (max-width:991px){
+    html{
+        font-size: 0.58rem;
+    }
+
+    img{
+        scale: 0.85;
+    }
+
+    .webtext img{
+        margin-left: 220px;
+    }
+
+    #manac{
+        position: relative;
+        top: -48px;
+        margin-left: 200px;
+    }
+
+    #alorb{
+        position: relative;
+        top: -56px;
+        margin-left: 165px;
+    }
+
+    #myBtn{
+        scale: 0.8;
+    }
+
+    .smail{
+        position: relative;
+        top: 10px;
+    }
+
+    fieldset{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #submit{
+        position: relative;
+        left: 200px;
+        top: -20px;
+    }
+  }
+
+  @media only screen and (max-width:768px){
+    .leftsection{
+        font-size: 2.2rem;
+    }
+
+    .right{
+        display: none;
+    }
+
+    .mobilenav{
+        display: contents;
+    }
+
+    h1{
+        font-size: 2.5rem;
+    }
+
+    .webtext img{
+        margin-left: 100px;
+        scale: 1.5;
+        margin-bottom: 10px;
+    }
+
+    #manac{
+        position: relative;
+        top: -48px;
+        margin-left: 88px;
+    }
+
+    #alorb{
+        position: relative;
+        top: -56px;
+        margin-left: 55px;
+    }
+
+    .smail{
+        position: relative;
+        top: 10px;
+    }
+
+    fieldset{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #submit{
+        position: relative;
+        left: 150px;
+        top: -20px;
+    }
+  }
+  
+
+  @media only screen and (max-width:600px){
+    #skills img{
+        scale: 0.75;
+    }
+
+    .webtext img{
+        margin-left: 29px;
+        scale: 1.5;
+        margin-bottom: 10px;
+    }
+
+    #manac{
+        position: relative;
+        top: -48px;
+        margin-left: 88px;
+    }
+
+    #alorb{
+        position: relative;
+        top: -56px;
+        margin-left: 55px;
+    }
+
+    .leftsection{
+        font-size: 1.6rem;
+    }
+
+    #myBtn{
+        position: fixed;
+        right: 10px;
+    }
+
+    #about img{
+        scale: 0.7;
+    }
+
+    #skills img{
+        scale:0.6;
+    }
+
+    .smail{
+        position: relative;
+        top: 10px;
+    }
+
+    fieldset{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #submit{
+        position: relative;
+        left: 120px;
+        top: -20px;
+    }
+  }
+
+  @media only screen and (max-width:450px){
+    html{
+        font-size: 0.4rem;
+    }
+
+    .leftsection{
+        font-size: 1.7rem;
+    }
+
+    #about img{
+        scale: 0.5;
+    }
+
+    #skills img{
+        scale: 0.4;
+    }
+
+    .one, .two{
+        display: none;
+    }
+
+    .onemob, .twomob, .threemob, .fourmob{
+        display: contents;
+    } 
+    
+    section#skills{
+        margin: 400px 10px 600px;
+    }
+
+    #experience{
+        font-size: 0.9rem;
+        margin: 300px 10px 200px;
+    }
+
+    .webtext img{
+        margin-left: 50px;
+        scale: 1.5;
+        margin-bottom: 25px;
+    }
+
+    #manac{
+        position: relative;
+        top: -48px;
+        margin-left: 78px;
+    }
+
+    #alorb{
+        position: relative;
+        top: -56px;
+        margin-left: 55px;
+    }
+
+    footer svg{
+        scale: 0.75;
+    }
+
+    #me{
+        width: 90%;
+        font-size: 1.1rem;
+    }
+
+    .smail{
+        position: relative;
+        top: 10px;
+    }
+
+    fieldset{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #submit{
+        position: relative;
+        left: 90px;
+    }
+
+    div.webtext{
+        position: relative;
+        top: 100px;
+    }
+
+    #firstsection{
+        margin: 100px 0px 250px;
+    }
+  }
+
+  @media only screen and (min-width:1400px){
+    
+  }
