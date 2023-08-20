@@ -379,7 +379,7 @@
             </div>
         </section>
 
-        <section id="form">
+        <section id="form" onsubmit="return validateForm()">
             <h1 style="color: skyblue;">Have any Queries!?</h1>
 
             <form action="/submit" method="post" id="dataForm">
@@ -396,7 +396,7 @@
 
                     <textarea type="text" id="query" name="query" placeholder="Query"
                         style="background-color: #1414165e; color: white;"></textarea><br><br>
-                    <input type="submit" value="Submit" id="submit" onclick=""
+                    <input type="submit" value="Submit" id="submit" 
                         style="color: black; background-color: darkgray;">
                 </fieldset>
             </form>
