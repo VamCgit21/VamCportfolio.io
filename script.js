@@ -66,3 +66,17 @@ document.getElementById("dataForm").addEventListener("submit", function(event) {
       console.error("Error:", error);
   });
 });
+
+function validateForm() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var number = document.getElementById("number").value;
+  var query = document.getElementById("query").value;
+  
+  if (name === "" || email === "" || number === "" || query === "") {
+      alert("Please fill in all the required fields.");
+      return false; // Prevent form submission
+  }
+
+  return true;
+}
